@@ -1,13 +1,13 @@
 import csv
 
-file1 = csv.reader(open('base.csv', 'r')) #Master file whioh contains larger set of data
+file1 = csv.reader(open('master.csv', 'r')) #Master file whioh contains larger set of data
 all = list(file1)
 
-file2 = csv.reader(open('test.csv', 'r'))
+file2 = csv.reader(open('slave.csv', 'r'))
 omit = list(file2)
 matched_count = 0
 unmatched_count = 0
-with open('afteromitted.csv', 'w', newline='') as csvo:
+with open('result_of_comparison.csv', 'w', newline='') as csvo:
     om = csv.writer(csvo)
 
     for pr in all:
